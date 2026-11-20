@@ -1,0 +1,23 @@
+{
+  "title": "Complaints after planning the away day",
+  "description": "The team planned its away day on the shared trip planner on Thursday afternoon. Ana and Sam worked from London, Ben and Mia from New York. The next morning, two of them sent these messages. Nobody changed the planner's code that week.",
+  "complaints": [
+    {"customer": "Ben", "text": "I changed the time to 11:00 after I saw Sam's change, but it stayed at 10:00."},
+    {"customer": "Mia", "text": "I set the place to the park, and a few seconds later it said café. Nobody told me Ana had changed it too."}
+  ],
+  "failure": "skew",
+  "settings": {"stamps": "clock"},
+  "users": [
+    {"name": "Ana", "server": "London"},
+    {"name": "Sam", "server": "London"},
+    {"name": "Ben", "server": "New York"},
+    {"name": "Mia", "server": "New York"}
+  ],
+  "edits": [
+    {"time": 0, "user": "Sam", "field": "time", "value": "10:00"},
+    {"time": 2500, "user": "Ben", "field": "time", "value": "11:00"},
+    {"time": 6000, "user": "Ana", "field": "place", "value": "Café"},
+    {"time": 6500, "user": "Mia", "field": "place", "value": "Park"}
+  ],
+  "end": 10000
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 3: Trip planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lab 3: Trip planner</h1>
+    <p id="mode-note" class="hint"></p>
+  </header>
+
+  <nav id="steps" class="part lab">
+    <div id="step-buttons"></div>
+    <p id="step-text"></p>
+  </nav>
+
+  <section id="recording" class="part lab" hidden>
+    <h2 id="recording-title"></h2>
+    <p id="recording-description"></p>
+    <h3>Messages from the team</h3>
+    <ul id="complaints"></ul>
+    <button id="replay">Replay the afternoon</button>
+  </section>
+
+  <section class="part app">
+    <h2>1. The application</h2>
+    <p class="hint">What the team uses and sees: a shared page for planning an away day. Each person works through their nearest server.</p>
+    <div id="users" class="cards"></div>
+  </section>
+
+  <div class="down-arrow">▼ edits go to the servers</div>
+
+  <section class="part system">
+    <h2>2. The distributed system</h2>
+    <p class="hint">Two servers, each with its own copy of the page and its own clock. Each one only knows what it has seen.</p>
+    <div class="services">
+      <div id="server-London" class="service london"></div>
+      <div class="link">◀ updates ▶<br><span class="hint" id="delay"></span></div>
+      <div id="server-New York" class="service newyork"></div>
+    </div>
+  </section>
+
+  <section class="part lab">
+    <h2>3. Lab tools</h2>
+    <p class="hint">For investigating what happens. Not part of the system.</p>
+
+    <div id="clock" class="clock">
+      Time now: <strong id="now"></strong>
+      <button data-wait="1000">Wait 1 s</button>
+      <button data-wait="5000">Wait 5 s</button>
+      <span class="hint">Each edit takes 1 s of simulated time.</span>
+    </div>
+
+    <div class="columns">
+      <fieldset id="failures">
+        <legend>What goes wrong</legend>
+        <label><input type="radio" name="failure" value="none"> Nothing: both clocks are right</label>
+        <label><input type="radio" name="failure" value="skew"> New York's clock is 3 s behind</label>
+      </fieldset>
+      <fieldset id="behaviour">
+        <legend>How the servers stamp each edit</legend>
+        <label><input type="radio" name="stamps" value="clock"> with the server's own clock</label>
+        <label><input type="radio" name="stamps" value="lamport"> with a Lamport clock</label>
+        <label><input type="radio" name="stamps" value="vector"> with a vector clock</label>
+      </fieldset>
+    </div>
+    <p id="fixed" class="fixed"></p>
+    <button id="reset">Start again</button>
+
+    <h3>Timeline</h3>
+    <p class="hint">What an outside observer would see. Neither server can see this.</p>
+    <div id="picker"></div>
+    <table class="timeline">
+      <thead><tr><th>Time</th><th>From</th><th>To</th><th>What happened</th></tr></thead>
+      <tbody id="timeline"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
