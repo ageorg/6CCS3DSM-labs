@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 1: Online shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lab 1: Online shop</h1>
+    <p id="mode-note" class="hint"></p>
+  </header>
+
+  <nav id="steps" class="part lab">
+    <div id="step-buttons"></div>
+    <p id="step-text"></p>
+  </nav>
+
+  <section id="recording" class="part lab" hidden>
+    <h2 id="recording-title"></h2>
+    <p id="recording-description"></p>
+    <h3>Messages to customer support</h3>
+    <ul id="complaints"></ul>
+    <button id="replay">Replay the evening</button>
+  </section>
+
+  <section class="part app">
+    <h2>1. The application</h2>
+    <p class="hint">What customers use and see.</p>
+    <div id="customers" class="cards"></div>
+  </section>
+
+  <div class="down-arrow">▼ orders go to the shop</div>
+
+  <section class="part system">
+    <h2>2. The distributed system</h2>
+    <p class="hint">The services behind the application. Each one only knows what it has seen.</p>
+    <div class="services">
+      <div class="service stock">
+        <h3>Stock</h3>
+        <h4>Reservations</h4>
+        <ul id="reservations"></ul>
+      </div>
+      <div class="link">◀ reserve</div>
+      <div class="service shop">
+        <h3>Shop</h3>
+        <h4>Orders, as the shop sees them</h4>
+        <table>
+          <thead><tr id="orders-head"></tr></thead>
+          <tbody id="orders"></tbody>
+        </table>
+      </div>
+      <div class="link">charge ▶</div>
+      <div class="service payment">
+        <h3>Payment</h3>
+        <h4>Charges made</h4>
+        <table>
+          <thead><tr><th>Time</th><th>Customer</th><th>Items</th><th>Amount</th></tr></thead>
+          <tbody id="charges"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="part lab">
+    <h2>3. Lab tools</h2>
+    <p class="hint">For investigating what happens. Not part of the shop.</p>
+
+    <div class="columns">
+      <fieldset id="failures">
+        <legend>What goes wrong</legend>
+        <label><input type="radio" name="failure" value="none"> Nothing</label>
+        <label><input type="radio" name="failure" value="lose_request"> The first request to Payment is lost</label>
+        <label><input type="radio" name="failure" value="lose_reply"> The first reply from Payment is lost</label>
+        <label><input type="radio" name="failure" value="slow"> Payment takes 6 s longer on the first request</label>
+      </fieldset>
+      <fieldset id="behaviour">
+        <legend>How the shop behaves</legend>
+        <label><input type="checkbox" name="use_key"> Send an idempotency key with each charge (the same key on every attempt)</label>
+        <label><input type="checkbox" name="mark_pending"> If no attempt gets a reply, mark the order as pending and check later</label>
+      </fieldset>
+    </div>
+    <p id="fixed" class="fixed"></p>
+    <button id="reset">Start again</button>
+
+    <h3>Timeline</h3>
+    <p class="hint">What an outside observer would see. None of the services can see this.</p>
+    <div id="order-picker"></div>
+    <table class="timeline">
+      <thead><tr><th>Time</th><th>From</th><th>To</th><th>What happened</th></tr></thead>
+      <tbody id="timeline"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

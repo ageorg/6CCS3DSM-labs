@@ -1,0 +1,19 @@
+{
+  "title": "Complaints after a busy evening",
+  "description": "On Saturday evening four customers placed orders within a few minutes of each other. The next morning, customer support found these messages. Nobody changed the shop's code that day.",
+  "complaints": [
+    {"customer": "Carla", "text": "I was charged twice for one desk lamp."},
+    {"customer": "Dev", "text": "The website said my payment failed, but my bank shows I paid for the headphones."},
+    {"customer": "Ben", "text": "Just to say everything worked fine for me."}
+  ],
+  "settings": {"use_key": false, "mark_pending": false},
+  "orders": [
+    {"customer": "Anna", "items": ["Headphones"],
+     "attempts": [{"lose_request": true}]},
+    {"customer": "Carla", "items": ["Desk lamp"],
+     "attempts": [{"payment_pause": 6000}]},
+    {"customer": "Ben", "items": ["Book"]},
+    {"customer": "Dev", "items": ["Headphones"],
+     "attempts": [{"lose_request": true}, {"lose_request": true}, {"payment_pause": 6000}]}
+  ]
+}

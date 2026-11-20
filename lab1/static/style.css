@@ -1,0 +1,77 @@
+[hidden] { display: none !important; }
+
+:root {
+  --customer: #2b6cb0;  --customer-bg: #eef5fc;
+  --shop: #2f7a4f;      --shop-bg: #eef8f1;
+  --stock: #5a6472;     --stock-bg: #f2f3f5;
+  --payment: #a8661a;   --payment-bg: #fdf5ea;
+  --network: #b42318;
+}
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px 40px;
+  color: #222;
+}
+h1 { margin-bottom: 2px; }
+h2 { margin: 0 0 2px; font-size: 1.15em; }
+h3 { margin: 4px 0 8px; font-size: 1.05em; }
+h4 { margin: 10px 0 4px; font-size: 0.85em; color: #444; }
+ul { margin: 0; padding-left: 18px; font-size: 0.9em; }
+.hint { color: #777; font-size: 0.9em; margin: 0 0 10px; }
+button { padding: 6px 12px; margin: 4px 6px 4px 0; cursor: pointer; }
+button.small { padding: 2px 8px; font-size: 0.8em; margin: 2px 4px 2px 0; }
+button.chosen { background: #333; color: #fff; border-color: #333; }
+
+.part { border-radius: 8px; padding: 12px 16px 16px; margin: 16px 0; }
+.app { border: 2px solid var(--customer); }
+.system { border: 2px solid #999; }
+.lab { border: 2px dashed #999; background: #fafafa; }
+#steps p { margin: 6px 0 0; }
+
+.cards { display: flex; gap: 16px; flex-wrap: wrap; }
+.card { flex: 1; min-width: 260px; background: var(--customer-bg); border-radius: 6px; padding: 8px 14px 12px; }
+.card h3 { color: var(--customer); }
+.basket { background: #fff; border-radius: 6px; padding: 4px 10px 8px; margin: 8px 0; }
+.basket li button { margin-left: 4px; }
+.total { margin: 6px 0 2px; font-weight: 600; font-size: 0.9em; }
+.pay { background: var(--customer); color: #fff; border: none; border-radius: 4px; }
+.pay:disabled { background: #aaa; cursor: default; }
+
+.down-arrow { text-align: center; color: #666; font-size: 0.9em; }
+
+.services { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.service { border-radius: 6px; padding: 8px 12px 12px; }
+.service.stock { flex: 1; min-width: 180px; background: var(--stock-bg); border-top: 4px solid var(--stock); }
+.service.shop { flex: 2.4; min-width: 380px; background: var(--shop-bg); border-top: 4px solid var(--shop); }
+.service.payment { flex: 1.6; min-width: 280px; background: var(--payment-bg); border-top: 4px solid var(--payment); }
+.service.stock h3 { color: var(--stock); }
+.service.shop h3 { color: var(--shop); }
+.service.payment h3 { color: var(--payment); }
+.link { align-self: center; color: #666; font-size: 0.85em; white-space: nowrap; }
+
+.columns { display: flex; gap: 20px; flex-wrap: wrap; }
+.columns > * { flex: 1; min-width: 320px; }
+fieldset { border: 1px solid #ccc; border-radius: 6px; background: #fff; }
+fieldset label { display: block; margin: 6px 0; }
+.fixed { color: #555; font-size: 0.9em; margin: 8px 0 2px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.88em; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+th { background: rgba(0, 0, 0, 0.05); }
+td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.timeline { background: #fff; }
+#order-picker button { font-size: 0.85em; padding: 3px 9px; }
+
+.who { padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+.who.customer { background: var(--customer-bg); color: var(--customer); }
+.who.shop { background: var(--shop-bg); color: var(--shop); }
+.who.stock { background: var(--stock-bg); color: var(--stock); }
+.who.payment { background: var(--payment-bg); color: var(--payment); }
+.who.network { background: #fdecea; color: var(--network); }
+
+tr.lost td { color: var(--network); }
+tr.late td { color: #888; font-style: italic; }
+tr.timeout td { color: #9a5b00; }
+tr.event td { color: #555; }
