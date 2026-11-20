@@ -1,0 +1,29 @@
+{
+  "title": "Complaints after a ticket release",
+  "description": "Tickets for a small concert went on sale on Friday morning. Customers booked through the data centre nearest to them. A few days later, at the concert and by email, the venue received these messages. Nobody changed the system's code that week.",
+  "complaints": [
+    {"customer": "Sam", "text": "When I got to my seat, A4, someone else was sitting in it with a ticket for the same seat."},
+    {"customer": "Priya", "text": "Another customer had a ticket for my seat, A6."},
+    {"customer": "Conor", "text": "The site told me London was not responding, and I had to try again."}
+  ],
+  "settings": {"timeout": 3000, "take_over": true},
+  "customers": [
+    {"name": "Priya", "site": "London"},
+    {"name": "Sam", "site": "London"},
+    {"name": "Niamh", "site": "Dublin"},
+    {"name": "Conor", "site": "Dublin"}
+  ],
+  "events": [
+    {"time": 0, "type": "book", "customer": "Priya", "seat": "A1"},
+    {"time": 1000, "type": "book", "customer": "Niamh", "seat": "A2"},
+    {"time": 2500, "type": "link"},
+    {"time": 3000, "type": "book", "customer": "Sam", "seat": "A4"},
+    {"time": 4000, "type": "book", "customer": "Conor", "seat": "A5"},
+    {"time": 6000, "type": "book", "customer": "Niamh", "seat": "A4"},
+    {"time": 7000, "type": "book", "customer": "Conor", "seat": "A5"},
+    {"time": 8000, "type": "book", "customer": "Priya", "seat": "A6"},
+    {"time": 13000, "type": "book", "customer": "Conor", "seat": "A6"},
+    {"time": 15000, "type": "heal"}
+  ],
+  "end": 20000
+}

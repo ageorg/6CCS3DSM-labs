@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lab 2: Ticket booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lab 2: Ticket booking</h1>
+    <p id="mode-note" class="hint"></p>
+  </header>
+
+  <nav id="steps" class="part lab">
+    <div id="step-buttons"></div>
+    <p id="step-text"></p>
+  </nav>
+
+  <section id="recording" class="part lab" hidden>
+    <h2 id="recording-title"></h2>
+    <p id="recording-description"></p>
+    <h3>Messages to customer support</h3>
+    <ul id="complaints"></ul>
+    <button id="replay">Replay the ticket release</button>
+  </section>
+
+  <section class="part app">
+    <h2>1. The application</h2>
+    <p class="hint">What customers use and see. Each customer books through their nearest data centre.</p>
+    <div id="customers" class="cards"></div>
+  </section>
+
+  <div class="down-arrow">▼ bookings go to the data centres</div>
+
+  <section class="part system">
+    <h2>2. The distributed system</h2>
+    <p class="hint">Two data centres, each with its own copy of the seat map. Each one only knows what it has seen.</p>
+    <div class="services">
+      <div id="site-London" class="service london"></div>
+      <div id="link" class="link"></div>
+      <div id="site-Dublin" class="service dublin"></div>
+    </div>
+  </section>
+
+  <section class="part lab">
+    <h2>3. Lab tools</h2>
+    <p class="hint">For investigating what happens. Not part of the system.</p>
+
+    <div id="clock" class="clock">
+      Time now: <strong id="now"></strong>
+      <button data-wait="1000">Wait 1 s</button>
+      <button data-wait="5000">Wait 5 s</button>
+      <span class="hint">Each booking takes 1 s of simulated time.</span>
+    </div>
+
+    <div class="columns">
+      <fieldset id="failures">
+        <legend>What goes wrong</legend>
+        <label><input type="radio" name="failure" value="none"> Nothing</label>
+        <label><input type="radio" name="failure" value="crash"> London crashes</label>
+        <label><input type="radio" name="failure" value="pause"> London stops responding for a while, then carries on</label>
+        <label><input type="radio" name="failure" value="link"> The link between London and Dublin breaks</label>
+      </fieldset>
+      <fieldset id="behaviour">
+        <legend>How Dublin behaves</legend>
+        <p class="fixed">Dublin decides London has failed after no heartbeat for</p>
+        <label><input type="radio" name="timeout" value="3000"> 3 s</label>
+        <label><input type="radio" name="timeout" value="10000"> 10 s</label>
+        <p class="fixed">When Dublin decides London has failed, it</p>
+        <label><input type="radio" name="take_over" value="true"> takes over as primary and sells seats itself</label>
+        <label><input type="radio" name="take_over" value="false"> refuses bookings until it hears from London again</label>
+      </fieldset>
+    </div>
+    <p id="fixed" class="fixed"></p>
+    <button id="reset">Start again</button>
+
+    <h3>Timeline</h3>
+    <p class="hint">What an outside observer would see. Neither data centre can see this.</p>
+    <div id="picker"></div>
+    <table class="timeline">
+      <thead><tr><th>Time</th><th>From</th><th>To</th><th>What happened</th></tr></thead>
+      <tbody id="timeline"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

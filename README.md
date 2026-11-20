@@ -16,6 +16,7 @@ Each lab is a small distributed system that runs on your own laptop. A few servi
 | Lab | Week | The system | Related topics |
 |---|---|---|---|
 | [Lab 1](lab1/) | 2 | An online shop with three services: Shop, Stock and Payment | Remote calls between services; failures in a distributed system |
+| [Lab 2](lab2/) | 3 | A ticket booking service run from two data centres, London and Dublin | Models of distributed systems; detecting failures |
 
 ## Requirements
 
@@ -43,7 +44,9 @@ Open a terminal, go to the lab's folder and start it:
 | Windows | `cd lab1` then `py run.py` (or `python run.py`) |
 | macOS and Linux | `cd lab1` then `python3 run.py` |
 
-The page opens in your browser at http://localhost:8001. Keep the terminal open while you work, and press Ctrl+C in it to stop the lab.
+For another lab, use its folder instead of `lab1`. Each lab uses its own port (Lab 1: 8001, Lab 2: 8002); the terminal shows the page address.
+
+The page opens in your browser. Keep the terminal open while you work, and press Ctrl+C in it to stop the lab.
 
 Each lab's own README describes the system in detail and lists solutions to common problems.
 
