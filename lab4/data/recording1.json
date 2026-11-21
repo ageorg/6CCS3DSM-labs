@@ -1,0 +1,25 @@
+{
+  "title": "Complaints after planning the demo",
+  "description": "On Tuesday afternoon the team used the chat to plan Thursday's demo for a client. Ana and Sam work in London, Ben in Paris, and Chloe and Dev in Singapore. The next morning, two of them sent these messages. Nobody changed the chat's code that week.",
+  "complaints": [
+    {"customer": "Chloe", "text": "Ben wrote that he could present it before anyone had asked anything. I had no idea what he meant until a second later."},
+    {"customer": "Dev", "text": "Sam's last message said the demo moves to Friday, so I told the client Friday. It was on Thursday all along."}
+  ],
+  "failure": "lost",
+  "lost": [1, 2],
+  "settings": {"delivery": "receipt"},
+  "users": [
+    {"name": "Ana", "server": "London"},
+    {"name": "Sam", "server": "London"},
+    {"name": "Ben", "server": "Paris"},
+    {"name": "Chloe", "server": "Singapore"},
+    {"name": "Dev", "server": "Singapore"}
+  ],
+  "posts": [
+    {"time": 0, "user": "Ana", "text": "Who can present the demo?"},
+    {"time": 2000, "user": "Ben", "text": "I can present it."},
+    {"time": 8000, "user": "Sam", "text": "The demo moves to Friday."},
+    {"time": 9000, "user": "Sam", "text": "Sorry, ignore that: it stays on Thursday."}
+  ],
+  "end": 16000
+}

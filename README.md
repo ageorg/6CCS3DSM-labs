@@ -18,6 +18,7 @@ Each lab is a small distributed system that runs on your own laptop. A few servi
 | [Lab 1](lab1/) | 2 | An online shop with three services: Shop, Stock and Payment | Remote calls between services; failures in a distributed system |
 | [Lab 2](lab2/) | 3 | A ticket booking service run from two data centres, London and Dublin | Models of distributed systems; detecting failures |
 | [Lab 3](lab3/) | 4 | A shared trip planner kept on two servers, London and New York | Time and clocks in distributed systems |
+| [Lab 4](lab4/) | 5 | A team chat kept on three servers, London, Paris and Singapore | Broadcast and the order of messages |
 
 ## Requirements
 
@@ -45,7 +46,7 @@ Open a terminal, go to the lab's folder and start it:
 | Windows | `cd lab1` then `py run.py` (or `python run.py`) |
 | macOS and Linux | `cd lab1` then `python3 run.py` |
 
-For another lab, use its folder instead of `lab1`. Each lab uses its own port (Lab 1: 8001, Lab 2: 8002, Lab 3: 8003); the terminal shows the page address.
+For another lab, use its folder instead of `lab1`. Each lab uses its own port (Lab 1: 8001, Lab 2: 8002, Lab 3: 8003, Lab 4: 8004); the terminal shows the page address.
 
 The page opens in your browser. Keep the terminal open while you work, and press Ctrl+C in it to stop the lab.
 
